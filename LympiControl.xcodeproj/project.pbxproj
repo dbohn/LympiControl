@@ -7,11 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D70D1FDB1B52E42B00CCDA00 /* FileData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D1FDA1B52E42B00CCDA00 /* FileData.swift */; };
+		D70D1FDD1B53090300CCDA00 /* ImageListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D1FDC1B53090300CCDA00 /* ImageListController.swift */; };
+		D70D1FDF1B5317BF00CCDA00 /* PreviewImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D1FDE1B5317BF00CCDA00 /* PreviewImageView.swift */; };
+		D70D1FE11B531BE900CCDA00 /* FileDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D1FE01B531BE900CCDA00 /* FileDataLoader.swift */; };
+		D70D1FE51B531ED500CCDA00 /* LineReader.m in Sources */ = {isa = PBXBuildFile; fileRef = D70D1FE41B531ED500CCDA00 /* LineReader.m */; };
+		D70D1FEA1B532C3500CCDA00 /* CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D1FE81B532C3500CCDA00 /* CollectionViewCell.swift */; };
+		D70D1FED1B53395D00CCDA00 /* CustomCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D70D1FEC1B53395D00CCDA00 /* CustomCollectionView.swift */; };
 		D7509AFD1B500E8000B5FD3E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7509AFC1B500E8000B5FD3E /* AppDelegate.swift */; };
 		D7509AFF1B500E8000B5FD3E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7509AFE1B500E8000B5FD3E /* ViewController.swift */; };
 		D7509B011B500E8000B5FD3E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7509B001B500E8000B5FD3E /* Images.xcassets */; };
 		D7509B041B500E8000B5FD3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7509B021B500E8000B5FD3E /* Main.storyboard */; };
 		D7509B101B500E8000B5FD3E /* LympiControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7509B0F1B500E8000B5FD3E /* LympiControlTests.swift */; };
+		D7F7857C1B53FD1D009F63AB /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F7857B1B53FD1D009F63AB /* CellView.swift */; };
+		EAEEDF9BAC017CD1A0F22006 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A7D8C272FFB4C0996E6650 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,6 +34,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		37A7D8C272FFB4C0996E6650 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4991222FB792020E01BA0E6A /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		D70D1FDA1B52E42B00CCDA00 /* FileData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileData.swift; sourceTree = "<group>"; };
+		D70D1FDC1B53090300CCDA00 /* ImageListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageListController.swift; sourceTree = "<group>"; };
+		D70D1FDE1B5317BF00CCDA00 /* PreviewImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewImageView.swift; sourceTree = "<group>"; };
+		D70D1FE01B531BE900CCDA00 /* FileDataLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDataLoader.swift; sourceTree = "<group>"; };
+		D70D1FE21B531ED500CCDA00 /* LympiControl-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LympiControl-Bridging-Header.h"; sourceTree = "<group>"; };
+		D70D1FE31B531ED500CCDA00 /* LineReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineReader.h; sourceTree = "<group>"; };
+		D70D1FE41B531ED500CCDA00 /* LineReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineReader.m; sourceTree = "<group>"; };
+		D70D1FE81B532C3500CCDA00 /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
+		D70D1FEC1B53395D00CCDA00 /* CustomCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCollectionView.swift; sourceTree = "<group>"; };
 		D7509AF71B500E8000B5FD3E /* LympiControl.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LympiControl.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7509AFB1B500E8000B5FD3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7509AFC1B500E8000B5FD3E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +54,8 @@
 		D7509B091B500E8000B5FD3E /* LympiControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LympiControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7509B0E1B500E8000B5FD3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7509B0F1B500E8000B5FD3E /* LympiControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LympiControlTests.swift; sourceTree = "<group>"; };
+		D7F7857B1B53FD1D009F63AB /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		E834B96AA823E55D844D7C3C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EAEEDF9BAC017CD1A0F22006 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,12 +77,39 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36B1E460FE3C7CD7131843D3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4991222FB792020E01BA0E6A /* Pods.debug.xcconfig */,
+				E834B96AA823E55D844D7C3C /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		3B35DF3D2C5C44E6D4C0863F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				37A7D8C272FFB4C0996E6650 /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D70D1FD91B52E41100CCDA00 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D70D1FDA1B52E42B00CCDA00 /* FileData.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		D7509AEE1B500E8000B5FD3E = {
 			isa = PBXGroup;
 			children = (
 				D7509AF91B500E8000B5FD3E /* LympiControl */,
 				D7509B0C1B500E8000B5FD3E /* LympiControlTests */,
 				D7509AF81B500E8000B5FD3E /* Products */,
+				36B1E460FE3C7CD7131843D3 /* Pods */,
+				3B35DF3D2C5C44E6D4C0863F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -75,11 +125,21 @@
 		D7509AF91B500E8000B5FD3E /* LympiControl */ = {
 			isa = PBXGroup;
 			children = (
+				D70D1FD91B52E41100CCDA00 /* Model */,
 				D7509AFC1B500E8000B5FD3E /* AppDelegate.swift */,
 				D7509AFE1B500E8000B5FD3E /* ViewController.swift */,
+				D70D1FE31B531ED500CCDA00 /* LineReader.h */,
+				D70D1FE41B531ED500CCDA00 /* LineReader.m */,
 				D7509B001B500E8000B5FD3E /* Images.xcassets */,
 				D7509B021B500E8000B5FD3E /* Main.storyboard */,
 				D7509AFA1B500E8000B5FD3E /* Supporting Files */,
+				D70D1FDC1B53090300CCDA00 /* ImageListController.swift */,
+				D70D1FDE1B5317BF00CCDA00 /* PreviewImageView.swift */,
+				D70D1FE01B531BE900CCDA00 /* FileDataLoader.swift */,
+				D70D1FE21B531ED500CCDA00 /* LympiControl-Bridging-Header.h */,
+				D70D1FE81B532C3500CCDA00 /* CollectionViewCell.swift */,
+				D70D1FEC1B53395D00CCDA00 /* CustomCollectionView.swift */,
+				D7F7857B1B53FD1D009F63AB /* CellView.swift */,
 			);
 			path = LympiControl;
 			sourceTree = "<group>";
@@ -116,9 +176,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D7509B131B500E8000B5FD3E /* Build configuration list for PBXNativeTarget "LympiControl" */;
 			buildPhases = (
+				0BCCCDA296CB653E4B5BCEC6 /* Check Pods Manifest.lock */,
 				D7509AF31B500E8000B5FD3E /* Sources */,
 				D7509AF41B500E8000B5FD3E /* Frameworks */,
 				D7509AF51B500E8000B5FD3E /* Resources */,
+				82CEBF1610A18F63174B19E7 /* Embed Pods Frameworks */,
+				8A3583AA80D24E7C9BFA0C83 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -153,6 +216,7 @@
 		D7509AEF1B500E8000B5FD3E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0640;
 				ORGANIZATIONNAME = "David Bohn";
 				TargetAttributes = {
@@ -203,13 +267,69 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0BCCCDA296CB653E4B5BCEC6 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		82CEBF1610A18F63174B19E7 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8A3583AA80D24E7C9BFA0C83 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D7509AF31B500E8000B5FD3E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D70D1FED1B53395D00CCDA00 /* CustomCollectionView.swift in Sources */,
 				D7509AFF1B500E8000B5FD3E /* ViewController.swift in Sources */,
 				D7509AFD1B500E8000B5FD3E /* AppDelegate.swift in Sources */,
+				D70D1FEA1B532C3500CCDA00 /* CollectionViewCell.swift in Sources */,
+				D70D1FDF1B5317BF00CCDA00 /* PreviewImageView.swift in Sources */,
+				D70D1FDB1B52E42B00CCDA00 /* FileData.swift in Sources */,
+				D7F7857C1B53FD1D009F63AB /* CellView.swift in Sources */,
+				D70D1FE11B531BE900CCDA00 /* FileDataLoader.swift in Sources */,
+				D70D1FDD1B53090300CCDA00 /* ImageListController.swift in Sources */,
+				D70D1FE51B531ED500CCDA00 /* LineReader.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,23 +445,30 @@
 		};
 		D7509B141B500E8000B5FD3E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4991222FB792020E01BA0E6A /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = LympiControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LympiControl/LympiControl-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		D7509B151B500E8000B5FD3E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E834B96AA823E55D844D7C3C /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = LympiControl/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "LympiControl/LympiControl-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -400,6 +527,7 @@
 				D7509B151B500E8000B5FD3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D7509B161B500E8000B5FD3E /* Build configuration list for PBXNativeTarget "LympiControlTests" */ = {
 			isa = XCConfigurationList;
@@ -408,6 +536,7 @@
 				D7509B181B500E8000B5FD3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="6198" systemVersion="14A297b" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="6198"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7706"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -641,19 +641,20 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="LympiControl" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="0.0"/>
+            <point key="canvasLocation" x="75.5" y="-57"/>
         </scene>
-        <!--Window Controller - Window-->
+        <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="Window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" title="Olympus Image Share Import" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="480" height="270"/>
+                        <rect key="contentRect" x="196" y="240" width="840" height="373"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
@@ -662,20 +663,187 @@
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="250"/>
+            <point key="canvasLocation" x="253" y="247.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="LympiControl" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="751" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="us8-uW-o3R">
+                                <rect key="frame" x="0.0" y="0.0" width="484" height="270"/>
+                                <clipView key="contentView" id="za1-Ea-mQ9">
+                                    <rect key="frame" x="1" y="1" width="248" height="158"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <collectionView autoresizesSubviews="NO" selectable="YES" allowsMultipleSelection="YES" id="mau-3c-rE9" customClass="CustomCollectionView" customModule="LympiControl" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="248" height="158"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            <connections>
+                                                <binding destination="CqB-tc-6Xi" name="content" keyPath="arrangedObjects" id="K3N-sO-Vcm"/>
+                                                <binding destination="CqB-tc-6Xi" name="selectionIndexes" keyPath="selectionIndexes" previousBinding="K3N-sO-Vcm" id="66u-xD-Nx9"/>
+                                            </connections>
+                                        </collectionView>
+                                    </subviews>
+                                </clipView>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="sLm-Mm-VXo">
+                                    <rect key="frame" x="1" y="144" width="233" height="15"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="wwl-mx-IPj">
+                                    <rect key="frame" x="234" y="1" width="15" height="143"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="ytQ-pf-Pky">
+                                <rect key="frame" x="484" y="0.0" width="267" height="270"/>
+                                <subviews>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="icr-ic-Fxk">
+                                        <rect key="frame" x="3" y="5" width="38" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Neg-5l-vfn">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="icr-ic-Fxk" firstAttribute="leading" secondItem="ytQ-pf-Pky" secondAttribute="leading" constant="5" id="hfN-TW-5HM"/>
+                                    <constraint firstAttribute="bottom" secondItem="icr-ic-Fxk" secondAttribute="bottom" constant="5" id="vul-bl-lqm"/>
+                                </constraints>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="us8-uW-o3R" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="ChW-aq-V9V"/>
+                            <constraint firstAttribute="bottom" secondItem="ytQ-pf-Pky" secondAttribute="bottom" id="EkZ-MU-VtY"/>
+                            <constraint firstAttribute="trailing" secondItem="ytQ-pf-Pky" secondAttribute="trailing" id="HGZ-Ey-UrP"/>
+                            <constraint firstItem="us8-uW-o3R" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="YCf-Dp-AZH"/>
+                            <constraint firstItem="us8-uW-o3R" firstAttribute="bottom" secondItem="ytQ-pf-Pky" secondAttribute="bottom" id="gDv-PA-w3b"/>
+                            <constraint firstItem="ytQ-pf-Pky" firstAttribute="leading" secondItem="us8-uW-o3R" secondAttribute="trailing" id="qO5-Ft-TQ2"/>
+                            <constraint firstItem="ytQ-pf-Pky" firstAttribute="top" secondItem="us8-uW-o3R" secondAttribute="top" id="qRd-gb-ssA"/>
+                            <constraint firstAttribute="trailing" secondItem="us8-uW-o3R" secondAttribute="trailing" constant="267" id="sOq-vS-q43"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="camName" destination="icr-ic-Fxk" id="wcu-2f-hSf"/>
+                        <outlet property="collectionView" destination="mau-3c-rE9" id="ZFT-KE-Ep3"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <arrayController objectClassName="FileData" automaticallyRearrangesObjects="YES" id="CqB-tc-6Xi">
+                    <declaredKeys>
+                        <string>filename</string>
+                        <string>filesize</string>
+                    </declaredKeys>
+                    <connections>
+                        <binding destination="D73-0g-bv4" name="contentArray" keyPath="images" id="CSE-gI-opv"/>
+                    </connections>
+                </arrayController>
+                <userDefaultsController representsSharedInstance="YES" id="6Yg-WF-ebQ"/>
+                <customObject id="D73-0g-bv4" customClass="ImageListController" customModule="LympiControl" customModuleProvider="target">
+                    <connections>
+                        <outlet property="arrayController" destination="CqB-tc-6Xi" id="8Pk-Iy-9H3"/>
+                    </connections>
+                </customObject>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="208.5" y="730"/>
+        </scene>
+        <!--Collection View Cell-->
+        <scene sceneID="7zK-5M-mZr">
+            <objects>
+                <collectionViewItem storyboardIdentifier="colView" id="L52-V6-Ml6" customClass="CollectionViewCell" customModule="LympiControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="hns-Vf-xQ8">
+                        <rect key="frame" x="0.0" y="0.0" width="135" height="145"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="51O-wN-SGJ">
+                                <rect key="frame" x="78" y="12" width="48" height="11"/>
+                                <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="left" title="Erstellzeit" id="Pen-6T-Ioq">
+                                    <font key="font" metaFont="miniSystem"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="L52-V6-Ml6" name="value" keyPath="representedObject.creationDate" id="aoD-mw-P0a"/>
+                                    <outlet property="formatter" destination="pbs-sg-KYU" id="geC-sF-3l6"/>
+                                </connections>
+                            </textField>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UNR-e5-oCS">
+                                <rect key="frame" x="10" y="12" width="29" height="11"/>
+                                <textFieldCell key="cell" controlSize="mini" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="lcB-Qg-34N">
+                                    <font key="font" metaFont="miniSystem"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="L52-V6-Ml6" name="value" keyPath="representedObject.filesize" id="quO-iI-Ojy"/>
+                                    <outlet property="formatter" destination="MeY-y9-y8P" id="nPG-1P-2Vs"/>
+                                </connections>
+                            </textField>
+                            <imageView canDrawConcurrently="YES" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DZN-HX-BBd">
+                                <rect key="frame" x="0.0" y="57" width="135" height="81"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="135" id="1dF-h9-BmS"/>
+                                    <constraint firstAttribute="height" constant="81" id="jyh-Sa-Abs"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="uHa-2x-exm"/>
+                                <connections>
+                                    <binding destination="L52-V6-Ml6" name="value" keyPath="previewNSImage" id="XKQ-MI-CLg"/>
+                                </connections>
+                            </imageView>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="HLK-6n-hf3">
+                                <rect key="frame" x="-2" y="32" width="139" height="17"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Filename" id="jtD-By-jg1">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                                <connections>
+                                    <binding destination="L52-V6-Ml6" name="value" keyPath="representedObject.filename" id="veM-LZ-wta"/>
+                                </connections>
+                            </textField>
+                            <box autoresizesSubviews="NO" fixedFrame="YES" transparent="YES" title="Box" borderType="line" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Wu6-9N-czZ">
+                                <rect key="frame" x="-5" y="-4" width="143" height="151"/>
+                                <view key="contentView">
+                                    <rect key="frame" x="1" y="1" width="141" height="149"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                <color key="fillColor" red="0.58352910221516474" green="0.83057584169000465" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <binding destination="L52-V6-Ml6" name="transparent" keyPath="self.selected" id="xLW-Ec-xRD">
+                                        <dictionary key="options">
+                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
+                                        </dictionary>
+                                    </binding>
+                                </connections>
+                            </box>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="HLK-6n-hf3" firstAttribute="leading" secondItem="hns-Vf-xQ8" secondAttribute="leading" id="09P-x3-IsZ"/>
+                            <constraint firstItem="HLK-6n-hf3" firstAttribute="top" secondItem="DZN-HX-BBd" secondAttribute="bottom" constant="11" id="7WR-fJ-5xT"/>
+                            <constraint firstAttribute="bottom" secondItem="UNR-e5-oCS" secondAttribute="bottom" constant="12" id="82Z-hF-zEB"/>
+                            <constraint firstAttribute="trailing" secondItem="51O-wN-SGJ" secondAttribute="trailing" constant="11" id="BeZ-Ne-CyA"/>
+                            <constraint firstItem="HLK-6n-hf3" firstAttribute="top" secondItem="DZN-HX-BBd" secondAttribute="bottom" constant="11" id="LCJ-TY-CQl"/>
+                            <constraint firstItem="DZN-HX-BBd" firstAttribute="leading" secondItem="hns-Vf-xQ8" secondAttribute="leading" constant="3" id="Pbf-Qy-Ti8"/>
+                            <constraint firstAttribute="trailing" secondItem="DZN-HX-BBd" secondAttribute="trailing" constant="-3" id="i46-cW-aEH"/>
+                            <constraint firstItem="DZN-HX-BBd" firstAttribute="top" secondItem="hns-Vf-xQ8" secondAttribute="top" constant="4" id="sce-US-A4z"/>
+                            <constraint firstItem="UNR-e5-oCS" firstAttribute="leading" secondItem="hns-Vf-xQ8" secondAttribute="leading" constant="12" id="t3Y-ft-z04"/>
+                            <constraint firstAttribute="bottom" secondItem="51O-wN-SGJ" secondAttribute="bottom" constant="12" id="uOs-4I-6OP"/>
+                            <constraint firstItem="UNR-e5-oCS" firstAttribute="top" secondItem="HLK-6n-hf3" secondAttribute="bottom" constant="9" id="wj7-9B-MAQ"/>
+                            <constraint firstAttribute="trailing" secondItem="HLK-6n-hf3" secondAttribute="trailing" id="z1s-AV-Kjf"/>
+                        </constraints>
+                    </view>
+                </collectionViewItem>
+                <dateFormatter dateStyle="short" timeStyle="short" id="pbs-sg-KYU"/>
+                <byteCountFormatter id="MeY-y9-y8P"/>
+                <customObject id="m1u-BD-994" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="119.5" y="990.5"/>
         </scene>
     </scenes>
 </document>
