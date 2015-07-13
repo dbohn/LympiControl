@@ -61,7 +61,20 @@ class ImageListController: NSObject {
     }
     
     override func imageBrowserSelectionDidChange(aBrowser: IKImageBrowserView!) {
-        println(imgBrowser.selectionIndexes().count)
+        // println(imgBrowser.selectionIndexes().count)
+        var notification : NSNotification = NSNotification(name: "ImageSelectionChange", object: imgBrowser.selectionIndexes())
+        NSNotificationCenter.defaultCenter().postNotification(notification)
         
+    }
+    
+    func getSelectedImages() -> [FileData] {
+        let selection = imgBrowser.selectionIndexes()
+        
+        var returnArray : [FileData] = []
+        
+        selection.enumerateIndexesUsingBlock { (idx, stop) -> Void in
+            returnArray.append(self.images[idx] as! FileData)
+        }
+        return returnArray
     }
 }

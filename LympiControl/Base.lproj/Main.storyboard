@@ -655,7 +655,7 @@
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="196" y="240" width="840" height="373"/>
+                        <rect key="contentRect" x="420" y="287" width="840" height="387"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
                     </window>
                     <connections>
@@ -678,30 +678,108 @@
                                 <rect key="frame" x="496" y="0.0" width="255" height="270"/>
                                 <subviews>
                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="icr-ic-Fxk">
-                                        <rect key="frame" x="-2" y="7" width="38" height="17"/>
+                                        <rect key="frame" x="18" y="7" width="38" height="17"/>
                                         <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Neg-5l-vfn">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
                                         </textFieldCell>
                                     </textField>
+                                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="wWS-AB-ceO">
+                                        <rect key="frame" x="20" y="213" width="215" height="5"/>
+                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <font key="titleFont" metaFont="system"/>
+                                    </box>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bxk-GU-PDH">
+                                        <rect key="frame" x="29" y="228" width="185" height="22"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Import von 0 Dateien" id="AOr-TG-ezG">
+                                            <font key="font" size="20" name="HelveticaNeue-Light"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bc6-Ng-HFk">
+                                        <rect key="frame" x="20" y="160" width="172" height="22"/>
+                                        <pathCell key="cell" selectable="YES" alignment="left" id="99G-j5-x2M">
+                                            <font key="font" metaFont="system"/>
+                                            <url key="url" string="file://localhost/Applications/"/>
+                                            <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.97254901959999995" alpha="0.0" colorSpace="deviceRGB"/>
+                                        </pathCell>
+                                    </pathControl>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bg7-eU-tft">
+                                        <rect key="frame" x="20" y="190" width="47" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Zielort:" id="mjw-H4-FcS">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5iv-KO-1wh">
+                                        <rect key="frame" x="189" y="154" width="40" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="28" id="4L2-4Q-diM"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="push" title="..." bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="zoe-aE-XE4">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="pushSelectFolder:" target="XfG-lQ-9wD" id="Kpf-QG-ytQ"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dIc-c7-p5M">
+                                        <rect key="frame" x="179" y="24" width="62" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Los!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Q1f-2y-icH">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="pushStartImport:" target="XfG-lQ-9wD" id="DXz-sz-hbH"/>
+                                        </connections>
+                                    </button>
+                                    <progressIndicator maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="BEG-CQ-ct9">
+                                        <rect key="frame" x="20" y="31" width="157" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="157" id="6Lh-cA-QbZ"/>
+                                        </constraints>
+                                    </progressIndicator>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="dIc-c7-p5M" secondAttribute="bottom" constant="31" id="1Ev-u9-lCP"/>
+                                    <constraint firstItem="BEG-CQ-ct9" firstAttribute="leading" secondItem="ytQ-pf-Pky" secondAttribute="leading" constant="20" id="2PI-HS-T0q"/>
+                                    <constraint firstItem="wWS-AB-ceO" firstAttribute="top" secondItem="ytQ-pf-Pky" secondAttribute="top" constant="54" id="3El-Bi-XfR"/>
+                                    <constraint firstItem="5iv-KO-1wh" firstAttribute="top" secondItem="wWS-AB-ceO" secondAttribute="bottom" constant="33" id="4di-Z9-ERD"/>
+                                    <constraint firstAttribute="trailing" secondItem="dIc-c7-p5M" secondAttribute="trailing" constant="20" id="DJr-mu-yRf"/>
+                                    <constraint firstItem="icr-ic-Fxk" firstAttribute="top" secondItem="BEG-CQ-ct9" secondAttribute="bottom" constant="8" id="GQc-tP-eYc"/>
+                                    <constraint firstItem="Bg7-eU-tft" firstAttribute="leading" secondItem="ytQ-pf-Pky" secondAttribute="leading" constant="22" id="I2x-hi-Me6"/>
+                                    <constraint firstItem="wWS-AB-ceO" firstAttribute="centerX" secondItem="Bxk-GU-PDH" secondAttribute="centerX" constant="6" id="IDe-P8-Vvx"/>
+                                    <constraint firstItem="5iv-KO-1wh" firstAttribute="leading" secondItem="bc6-Ng-HFk" secondAttribute="trailing" constant="3" id="K4x-hy-aGc"/>
+                                    <constraint firstItem="5iv-KO-1wh" firstAttribute="leading" secondItem="bc6-Ng-HFk" secondAttribute="trailing" constant="3" id="KtL-ha-kNr"/>
+                                    <constraint firstItem="dIc-c7-p5M" firstAttribute="leading" secondItem="BEG-CQ-ct9" secondAttribute="trailing" constant="8" id="MMd-9S-aWd"/>
+                                    <constraint firstItem="bc6-Ng-HFk" firstAttribute="top" secondItem="Bg7-eU-tft" secondAttribute="bottom" constant="8" id="MjR-tu-IgB"/>
                                     <constraint firstAttribute="width" constant="255" id="Xh2-3a-jJB"/>
-                                    <constraint firstItem="icr-ic-Fxk" firstAttribute="leading" secondItem="ytQ-pf-Pky" secondAttribute="leading" id="hfN-TW-5HM"/>
+                                    <constraint firstItem="Bg7-eU-tft" firstAttribute="top" secondItem="wWS-AB-ceO" secondAttribute="bottom" constant="8" symbolic="YES" id="coW-tL-cbv"/>
+                                    <constraint firstItem="icr-ic-Fxk" firstAttribute="leading" secondItem="ytQ-pf-Pky" secondAttribute="leading" constant="20" id="hfN-TW-5HM"/>
+                                    <constraint firstItem="wWS-AB-ceO" firstAttribute="leading" secondItem="bc6-Ng-HFk" secondAttribute="leading" id="isy-yd-Oix"/>
+                                    <constraint firstItem="wWS-AB-ceO" firstAttribute="top" secondItem="Bxk-GU-PDH" secondAttribute="bottom" constant="12" id="nLO-yj-dku"/>
+                                    <constraint firstItem="bc6-Ng-HFk" firstAttribute="leading" secondItem="ytQ-pf-Pky" secondAttribute="leading" constant="20" id="oHL-t0-JIi"/>
+                                    <constraint firstItem="Bxk-GU-PDH" firstAttribute="leading" secondItem="ytQ-pf-Pky" secondAttribute="leading" constant="31" id="qvg-Xq-JG5"/>
+                                    <constraint firstItem="Bxk-GU-PDH" firstAttribute="top" secondItem="ytQ-pf-Pky" secondAttribute="top" constant="20" id="tM8-B8-0RM"/>
+                                    <constraint firstAttribute="trailing" secondItem="5iv-KO-1wh" secondAttribute="trailing" constant="32" id="vIZ-HW-Okm"/>
                                     <constraint firstAttribute="bottom" secondItem="icr-ic-Fxk" secondAttribute="bottom" constant="7" id="vul-bl-lqm"/>
                                 </constraints>
                             </visualEffectView>
-                            <scrollView horizontalLineScroll="203.33332824707031" horizontalPageScroll="10" verticalLineScroll="156" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38B-Se-0Vs">
+                            <scrollView horizontalLineScroll="115" horizontalPageScroll="10" verticalLineScroll="115" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38B-Se-0Vs">
                                 <rect key="frame" x="-1" y="-1" width="496" height="272"/>
                                 <clipView key="contentView" copiesOnScroll="NO" id="8eW-I2-VOc">
                                     <rect key="frame" x="1" y="1" width="166" height="79"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <ikImageBrowserView autoresizesSubviews="NO" zoomValue="0.66828280687332153" animates="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YiZ-05-4cJ">
+                                        <ikImageBrowserView autoresizesSubviews="NO" misplaced="YES" zoomValue="0.49756687879562378" animates="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YiZ-05-4cJ">
                                             <rect key="frame" x="0.0" y="0.0" width="495" height="270"/>
                                             <autoresizingMask key="contentResizingMask" heightSizable="YES"/>
-                                            <size key="cellSize" width="136" height="136"/>
+                                            <size key="cellSize" width="95" height="95"/>
                                             <connections>
                                                 <outlet property="_dataSource" destination="D73-0g-bv4" id="fsv-Wt-A4G"/>
                                             </connections>
@@ -738,6 +816,10 @@
                     </view>
                     <connections>
                         <outlet property="camName" destination="icr-ic-Fxk" id="wcu-2f-hSf"/>
+                        <outlet property="destinationPathControl" destination="bc6-Ng-HFk" id="Ugv-mA-fWH"/>
+                        <outlet property="imgListController" destination="D73-0g-bv4" id="feo-q0-Rrd"/>
+                        <outlet property="importTitleLabel" destination="Bxk-GU-PDH" id="eE4-O8-a17"/>
+                        <outlet property="progessBar" destination="BEG-CQ-ct9" id="puy-Ar-FMN"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

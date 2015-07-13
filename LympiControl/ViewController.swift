@@ -12,9 +12,11 @@ import SwiftHTTP
 import Quartz
 
 class ViewController: NSViewController, NSXMLParserDelegate {
+    @IBOutlet var imgListController: ImageListController!
     @IBOutlet weak var camName: NSTextField!
-    //@IBOutlet weak var collectionView: NSCollectionView!
-    @IBOutlet weak var imgBrowser: IKImageBrowserView!
+    @IBOutlet weak var importTitleLabel: NSTextField!
+    @IBOutlet weak var progessBar: NSProgressIndicator!
+    @IBOutlet weak var destinationPathControl: NSPathControl!
     
     let cameraAdress = "http://192.168.0.10"
     var readingCamName = false
@@ -24,7 +26,11 @@ class ViewController: NSViewController, NSXMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //self.collectionView.itemPrototype = self.storyboard?.instantiateControllerWithIdentifier("colView") as? NSCollectionViewItem
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "imageSelectionChanged:", name: "ImageSelectionChange", object: nil)
+        
+        if let path = NSSearchPathForDirectoriesInDomains(.PicturesDirectory, .UserDomainMask, true).first as? String {
+            destinationPathControl.URL = NSURL(string: path)
+        }
         
         camName.stringValue = "Verbindungsaufbau..."
         
@@ -45,12 +51,8 @@ class ViewController: NSViewController, NSXMLParserDelegate {
                 parser = NSXMLParser(data: data);
                 parser.delegate = self;
                 parser.parse();
-                //let str = NSString(data: data, encoding: NSUTF8StringEncoding)
-                //println("response: \(str)") //prints the HTML of the page
             }
         })
-
-        // Do any additional setup after loading the view.
     }
 
     override var representedObject: AnyObject? {
@@ -75,6 +77,56 @@ class ViewController: NSViewController, NSXMLParserDelegate {
     
     func parserDidEndDocument(parser: NSXMLParser) {
         camName.stringValue = "Verbunden mit: " + readCamName
+    }
+    
+    func imageSelectionChanged(notification: NSNotification) {
+        importTitleLabel.stringValue = "Import von \((notification.object as! NSIndexSet).count) Dateien"
+    }
+    
+    @IBAction func pushSelectFolder(sender: AnyObject) {
+        var panel = NSOpenPanel()
+        panel.canChooseFiles = false
+        panel.canChooseDirectories = true
+        panel.canCreateDirectories = true
+        panel.allowsMultipleSelection = false
+        
+        let clicked = panel.runModal()
+        
+        if clicked == NSFileHandlingPanelOKButton {
+            destinationPathControl.URL = panel.URLs.first as? NSURL
+        }
+    }
+    
+    @IBAction func pushStartImport(sender: AnyObject) {
+        var imagesToDownload = imgListController.getSelectedImages()
+        
+        var request = HTTPTask()
+        let numOfImages = Double(imagesToDownload.count)
+        var n = 0.0
+        for image in imagesToDownload {
+            let task = request.download(cameraAdress + image.path + "/" + image.filename, parameters: nil, progress: { (complete : Double) -> Void in
+                
+                let prog = 100.0*n/numOfImages + (complete * 100)/numOfImages
+                
+                self.progessBar.doubleValue = prog
+                if (complete == 1.0) {
+                    n = n + 1.0
+                }
+                println(complete)
+                }, completionHandler: { (response: HTTPResponse) -> Void in
+                    if let url = response.responseObject as? NSURL {
+                        let path : String! = self.destinationPathControl.URL?.absoluteString!
+                        if let fileName = response.suggestedFilename {
+                            if let newPath = NSURL(string: path+fileName) {
+                                let fileManager = NSFileManager.defaultManager()
+                                fileManager.removeItemAtURL(newPath, error: nil)
+                                fileManager.moveItemAtURL(url, toURL: newPath, error:nil)
+                            }
+                        }
+                    }
+            })
+        }
+
     }
 
 }
