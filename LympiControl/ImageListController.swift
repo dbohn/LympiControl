@@ -7,14 +7,20 @@
 //
 
 import Cocoa
+import Quartz
 
 class ImageListController: NSObject {
 
     @IBOutlet weak var arrayController : NSArrayController!
     
+    @IBOutlet weak var imgBrowser: IKImageBrowserView!
+    
     var images : NSMutableArray = NSMutableArray()
     
     override func awakeFromNib() {
+        
+        imgBrowser.setCellsStyleMask(IKCellsStyleTitled | IKCellsStyleSubtitled)
+        imgBrowser.setDelegate(self)
         
         arrayController.addObserver(self, forKeyPath: "selectionIndexes", options: NSKeyValueObservingOptions.New, context: nil)
         
@@ -26,10 +32,15 @@ class ImageListController: NSObject {
         
         dataLoader.loadFileData("http://192.168.0.10", completion: {(files:[FileData]?) in
             dispatch_async(dispatch_get_main_queue()) {
-                for file in files! {
+                self.images = NSMutableArray()
+                /*for file in files! {
                     self.arrayController.addObject(file)
-                }
+                }*/
+                self.images.addObjectsFromArray(files!)
+                let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: true)
+                self.images.sortUsingDescriptors([sortDescriptor])
                 //self.arrayController.rearrangeObjects()
+                self.imgBrowser.reloadData()
             }
         })
         
@@ -39,5 +50,18 @@ class ImageListController: NSObject {
         if keyPath == "selectionIndexes" {
             //println(arrayController.selectedObjects)
         }
+    }
+    
+    override func numberOfItemsInImageBrowser(aBrowser: IKImageBrowserView!) -> Int {
+        return images.count
+    }
+    
+    override func imageBrowser(aBrowser: IKImageBrowserView!, itemAtIndex index: Int) -> AnyObject! {
+        return images[index]
+    }
+    
+    override func imageBrowserSelectionDidChange(aBrowser: IKImageBrowserView!) {
+        println(imgBrowser.selectionIndexes().count)
+        
     }
 }

@@ -9,9 +9,12 @@
 import Cocoa
 import SwiftHTTP
 
+import Quartz
+
 class ViewController: NSViewController, NSXMLParserDelegate {
     @IBOutlet weak var camName: NSTextField!
-    @IBOutlet weak var collectionView: NSCollectionView!
+    //@IBOutlet weak var collectionView: NSCollectionView!
+    @IBOutlet weak var imgBrowser: IKImageBrowserView!
     
     let cameraAdress = "http://192.168.0.10"
     var readingCamName = false
@@ -21,7 +24,7 @@ class ViewController: NSViewController, NSXMLParserDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.collectionView.itemPrototype = self.storyboard?.instantiateControllerWithIdentifier("colView") as? NSCollectionViewItem
+        //self.collectionView.itemPrototype = self.storyboard?.instantiateControllerWithIdentifier("colView") as? NSCollectionViewItem
         
         camName.stringValue = "Verbindungsaufbau..."
         

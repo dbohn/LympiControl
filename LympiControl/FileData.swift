@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Quartz
 
 class FileData: NSObject {
     var path : String
@@ -75,6 +76,30 @@ class FileData: NSObject {
         //println("Minute: \(minute)")
         //println("Stunde: \(hour)")
         return calendar?.dateFromComponents(components)
+    }
+    
+    override func imageRepresentationType() -> String! {
+        return IKImageBrowserNSURLRepresentationType;
+    }
+    
+    override func imageRepresentation() -> AnyObject! {
+        return self.thumbnailUrl
+    }
+    
+    override func imageUID() -> String! {
+        return self.thumbnailUrl.absoluteString
+    }
+    
+    override func imageTitle() -> String! {
+        return self.filename
+    }
+    
+    override func imageSubtitle() -> String! {
+        let byteformatter = NSByteCountFormatter()
+        let dateformatter = NSDateFormatter()
+        dateformatter.dateStyle = NSDateFormatterStyle.ShortStyle
+        dateformatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        return byteformatter.stringFromByteCount(Int64(self.filesize)) + ", " + dateformatter.stringFromDate(self.creationDate!)
     }
 
 }
