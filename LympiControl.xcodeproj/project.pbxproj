@@ -17,6 +17,8 @@
 		D7509B011B500E8000B5FD3E /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7509B001B500E8000B5FD3E /* Images.xcassets */; };
 		D7509B041B500E8000B5FD3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7509B021B500E8000B5FD3E /* Main.storyboard */; };
 		D7509B101B500E8000B5FD3E /* LympiControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7509B0F1B500E8000B5FD3E /* LympiControlTests.swift */; };
+		D7B4F34D1B5547C400267A76 /* LCLiveviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4F34C1B5547C400267A76 /* LCLiveviewViewController.swift */; };
+		D7FC21631B54FB0C00F2C285 /* LCLiveviewStream.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7FC21621B54FB0C00F2C285 /* LCLiveviewStream.swift */; };
 		EAEEDF9BAC017CD1A0F22006 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37A7D8C272FFB4C0996E6650 /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		D7509B091B500E8000B5FD3E /* LympiControlTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LympiControlTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7509B0E1B500E8000B5FD3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D7509B0F1B500E8000B5FD3E /* LympiControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LympiControlTests.swift; sourceTree = "<group>"; };
+		D7B4F34C1B5547C400267A76 /* LCLiveviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCLiveviewViewController.swift; sourceTree = "<group>"; };
+		D7FC21621B54FB0C00F2C285 /* LCLiveviewStream.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCLiveviewStream.swift; sourceTree = "<group>"; };
 		E834B96AA823E55D844D7C3C /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -121,6 +125,7 @@
 		D7509AF91B500E8000B5FD3E /* LympiControl */ = {
 			isa = PBXGroup;
 			children = (
+				D7FC21611B54FAED00F2C285 /* Liveview */,
 				D70D1FD91B52E41100CCDA00 /* Model */,
 				D7509AFC1B500E8000B5FD3E /* AppDelegate.swift */,
 				D7509AFE1B500E8000B5FD3E /* ViewController.swift */,
@@ -132,6 +137,7 @@
 				D70D1FDC1B53090300CCDA00 /* ImageListController.swift */,
 				D70D1FE01B531BE900CCDA00 /* FileDataLoader.swift */,
 				D70D1FE21B531ED500CCDA00 /* LympiControl-Bridging-Header.h */,
+				D7B4F34C1B5547C400267A76 /* LCLiveviewViewController.swift */,
 			);
 			path = LympiControl;
 			sourceTree = "<group>";
@@ -159,6 +165,14 @@
 				D7509B0E1B500E8000B5FD3E /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D7FC21611B54FAED00F2C285 /* Liveview */ = {
+			isa = PBXGroup;
+			children = (
+				D7FC21621B54FB0C00F2C285 /* LCLiveviewStream.swift */,
+			);
+			name = Liveview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,7 +328,9 @@
 			files = (
 				D7509AFF1B500E8000B5FD3E /* ViewController.swift in Sources */,
 				D7509AFD1B500E8000B5FD3E /* AppDelegate.swift in Sources */,
+				D7B4F34D1B5547C400267A76 /* LCLiveviewViewController.swift in Sources */,
 				D70D1FDB1B52E42B00CCDA00 /* FileData.swift in Sources */,
+				D7FC21631B54FB0C00F2C285 /* LCLiveviewStream.swift in Sources */,
 				D70D1FE11B531BE900CCDA00 /* FileDataLoader.swift in Sources */,
 				D70D1FDD1B53090300CCDA00 /* ImageListController.swift in Sources */,
 				D70D1FE51B531ED500CCDA00 /* LineReader.m in Sources */,

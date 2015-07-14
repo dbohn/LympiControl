@@ -32,6 +32,9 @@ class ViewController: NSViewController, NSXMLParserDelegate {
             destinationPathControl.URL = NSURL(string: path)
         }
         
+        // liveview = LCLiveviewStream()
+        
+        
         camName.stringValue = "Verbindungsaufbau..."
         
         var request = HTTPTask()
