@@ -17,6 +17,7 @@
 		D7509B041B500E8000B5FD3E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7509B021B500E8000B5FD3E /* Main.storyboard */; };
 		D7509B101B500E8000B5FD3E /* LympiControlTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7509B0F1B500E8000B5FD3E /* LympiControlTests.swift */; };
 		D77897A91B57BD7300F5BB0C /* BRLineReader.m in Sources */ = {isa = PBXBuildFile; fileRef = D77897A81B57BD7300F5BB0C /* BRLineReader.m */; };
+		D77897AB1B57BF5F00F5BB0C /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = D77897AA1B57BF5F00F5BB0C /* README.md */; };
 		D7B4F34D1B5547C400267A76 /* LCLiveviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B4F34C1B5547C400267A76 /* LCLiveviewViewController.swift */; };
 		D7E7AF641B569FBA00A0762E /* LCApplicationWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E7AF631B569FBA00A0762E /* LCApplicationWindowController.swift */; };
 		D7E7AF661B56BC0F00A0762E /* LCImageBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E7AF651B56BC0F00A0762E /* LCImageBrowserViewController.swift */; };
@@ -55,6 +56,7 @@
 		D7509B0F1B500E8000B5FD3E /* LympiControlTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LympiControlTests.swift; sourceTree = "<group>"; };
 		D77897A71B57BD7300F5BB0C /* BRLineReader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BRLineReader.h; sourceTree = "<group>"; };
 		D77897A81B57BD7300F5BB0C /* BRLineReader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BRLineReader.m; sourceTree = "<group>"; };
+		D77897AA1B57BF5F00F5BB0C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		D7B4F34C1B5547C400267A76 /* LCLiveviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCLiveviewViewController.swift; sourceTree = "<group>"; };
 		D7E7AF631B569FBA00A0762E /* LCApplicationWindowController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCApplicationWindowController.swift; sourceTree = "<group>"; };
 		D7E7AF651B56BC0F00A0762E /* LCImageBrowserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LCImageBrowserViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +151,7 @@
 				D7E7AF631B569FBA00A0762E /* LCApplicationWindowController.swift */,
 				D7E7AF651B56BC0F00A0762E /* LCImageBrowserViewController.swift */,
 				D7E7AF671B56BC3700A0762E /* LCImportPanelViewController.swift */,
+				D77897AA1B57BF5F00F5BB0C /* README.md */,
 			);
 			path = LympiControl;
 			sourceTree = "<group>";
@@ -350,6 +353,7 @@
 				D77897A91B57BD7300F5BB0C /* BRLineReader.m in Sources */,
 				D7E7AF691B56BC3700A0762E /* LCImportPanelViewController.swift in Sources */,
 				D7509AFF1B500E8000B5FD3E /* ViewController.swift in Sources */,
+				D77897AB1B57BF5F00F5BB0C /* README.md in Sources */,
 				D7E7AF6D1B56C2A700A0762E /* LCCameraNameReader.swift in Sources */,
 				D7509AFD1B500E8000B5FD3E /* AppDelegate.swift in Sources */,
 				D7B4F34D1B5547C400267A76 /* LCLiveviewViewController.swift in Sources */,
