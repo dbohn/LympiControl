@@ -17,7 +17,7 @@ class FileDataLoader: NSObject {
         
         request.GET(baseUrl + "/get_imglist.cgi?DIR=/DCIM/100OLYMP", parameters: nil, completionHandler: {(response: HTTPResponse) in
             if let data = response.responseObject as? NSData {
-                var linereader = LineReader(data: data, encoding: NSUTF8StringEncoding)
+                var linereader = BRLineReader(data: data, encoding: NSUTF8StringEncoding)
                 
                 var result = [FileData]()
                 

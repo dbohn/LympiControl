@@ -10,8 +10,6 @@ import Cocoa
 import Quartz
 
 class ImageListController: NSObject {
-
-    @IBOutlet weak var arrayController : NSArrayController!
     
     @IBOutlet weak var imgBrowser: IKImageBrowserView!
     
@@ -22,11 +20,11 @@ class ImageListController: NSObject {
         imgBrowser.setCellsStyleMask(IKCellsStyleTitled | IKCellsStyleSubtitled)
         imgBrowser.setDelegate(self)
         
-        arrayController.addObserver(self, forKeyPath: "selectionIndexes", options: NSKeyValueObservingOptions.New, context: nil)
+        /*arrayController.addObserver(self, forKeyPath: "selectionIndexes", options: NSKeyValueObservingOptions.New, context: nil)
         
         let sortDescriptor = NSSortDescriptor(key: "creationDate", ascending: true)
         
-        arrayController.sortDescriptors = [sortDescriptor]
+        arrayController.sortDescriptors = [sortDescriptor]*/
         
         var dataLoader = FileDataLoader()
         
@@ -62,7 +60,7 @@ class ImageListController: NSObject {
     
     override func imageBrowserSelectionDidChange(aBrowser: IKImageBrowserView!) {
         // println(imgBrowser.selectionIndexes().count)
-        var notification : NSNotification = NSNotification(name: "ImageSelectionChange", object: imgBrowser.selectionIndexes())
+        var notification : NSNotification = NSNotification(name: "ImageSelectionChange", object: self.getSelectedImages())
         NSNotificationCenter.defaultCenter().postNotification(notification)
         
     }

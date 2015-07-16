@@ -650,13 +650,14 @@
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
             <objects>
-                <windowController id="B8D-0N-5wS" sceneMemberID="viewController">
+                <windowController id="B8D-0N-5wS" customClass="LCApplicationWindowController" customModule="LympiControl" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" title="Olympus Image Share Import" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES"/>
                         <windowCollectionBehavior key="collectionBehavior" fullScreenPrimary="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
-                        <rect key="contentRect" x="420" y="287" width="840" height="387"/>
+                        <rect key="contentRect" x="420" y="287" width="1024" height="387"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
+                        <value key="minSize" type="size" width="1024" height="387"/>
                     </window>
                     <connections>
                         <segue destination="IpR-ck-wkY" kind="relationship" relationship="window.shadowedContentViewController" id="BmI-QX-DF5"/>
@@ -667,190 +668,199 @@
             <point key="canvasLocation" x="253" y="247.5"/>
         </scene>
         <!--Import-->
-        <scene sceneID="hIz-AP-VOD">
+        <scene sceneID="6Zy-vH-s98">
             <objects>
-                <viewController title="Import" id="XfG-lQ-9wD" customClass="ViewController" customModule="LympiControl" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="751" height="270"/>
+                <splitViewController title="Import" id="zOS-2F-TiK" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="ed6-p7-DcU"/>
+                        <splitViewItem id="Dbr-KA-Ttu"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="7Hb-x3-Bl8">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </splitView>
+                    <connections>
+                        <segue destination="lAC-T7-CVK" kind="relationship" relationship="splitItems" id="nAq-S2-vby"/>
+                        <segue destination="uWY-pl-Mfc" kind="relationship" relationship="splitItems" id="ePV-gc-dFP"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="PFO-DL-noX" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="253" y="1372"/>
+        </scene>
+        <!--Image Browser View Controller-->
+        <scene sceneID="nqV-sl-tMz">
+            <objects>
+                <viewController id="lAC-T7-CVK" customClass="LCImageBrowserViewController" customModule="LympiControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="kVQ-eh-BzC">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <visualEffectView appearanceType="vibrantLight" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="ytQ-pf-Pky">
-                                <rect key="frame" x="496" y="0.0" width="255" height="270"/>
-                                <subviews>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="icr-ic-Fxk">
-                                        <rect key="frame" x="18" y="7" width="38" height="17"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="Neg-5l-vfn">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <box verticalHuggingPriority="750" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="wWS-AB-ceO">
-                                        <rect key="frame" x="20" y="213" width="215" height="5"/>
-                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
-                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <font key="titleFont" metaFont="system"/>
-                                    </box>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bxk-GU-PDH">
-                                        <rect key="frame" x="29" y="228" width="185" height="22"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Import von 0 Dateien" id="AOr-TG-ezG">
-                                            <font key="font" size="20" name="HelveticaNeue-Light"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <pathControl verticalHuggingPriority="750" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bc6-Ng-HFk">
-                                        <rect key="frame" x="20" y="160" width="172" height="22"/>
-                                        <pathCell key="cell" selectable="YES" alignment="left" id="99G-j5-x2M">
-                                            <font key="font" metaFont="system"/>
-                                            <url key="url" string="file://localhost/Applications/"/>
-                                            <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.97254901959999995" alpha="0.0" colorSpace="deviceRGB"/>
-                                        </pathCell>
-                                    </pathControl>
-                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Bg7-eU-tft">
-                                        <rect key="frame" x="20" y="190" width="47" height="17"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Zielort:" id="mjw-H4-FcS">
-                                            <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="5iv-KO-1wh">
-                                        <rect key="frame" x="189" y="154" width="40" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="28" id="4L2-4Q-diM"/>
-                                        </constraints>
-                                        <buttonCell key="cell" type="push" title="..." bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="zoe-aE-XE4">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="pushSelectFolder:" target="XfG-lQ-9wD" id="Kpf-QG-ytQ"/>
-                                        </connections>
-                                    </button>
-                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dIc-c7-p5M">
-                                        <rect key="frame" x="179" y="24" width="62" height="32"/>
-                                        <buttonCell key="cell" type="push" title="Los!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Q1f-2y-icH">
-                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                            <font key="font" metaFont="system"/>
-                                        </buttonCell>
-                                        <connections>
-                                            <action selector="pushStartImport:" target="XfG-lQ-9wD" id="DXz-sz-hbH"/>
-                                        </connections>
-                                    </button>
-                                    <progressIndicator maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="BEG-CQ-ct9">
-                                        <rect key="frame" x="20" y="31" width="157" height="20"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="157" id="6Lh-cA-QbZ"/>
-                                        </constraints>
-                                    </progressIndicator>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="dIc-c7-p5M" secondAttribute="bottom" constant="31" id="1Ev-u9-lCP"/>
-                                    <constraint firstItem="BEG-CQ-ct9" firstAttribute="leading" secondItem="ytQ-pf-Pky" secondAttribute="leading" constant="20" id="2PI-HS-T0q"/>
-                                    <constraint firstItem="wWS-AB-ceO" firstAttribute="top" secondItem="ytQ-pf-Pky" secondAttribute="top" constant="54" id="3El-Bi-XfR"/>
-                                    <constraint firstItem="5iv-KO-1wh" firstAttribute="top" secondItem="wWS-AB-ceO" secondAttribute="bottom" constant="33" id="4di-Z9-ERD"/>
-                                    <constraint firstAttribute="trailing" secondItem="dIc-c7-p5M" secondAttribute="trailing" constant="20" id="DJr-mu-yRf"/>
-                                    <constraint firstItem="icr-ic-Fxk" firstAttribute="top" secondItem="BEG-CQ-ct9" secondAttribute="bottom" constant="8" id="GQc-tP-eYc"/>
-                                    <constraint firstItem="Bg7-eU-tft" firstAttribute="leading" secondItem="ytQ-pf-Pky" secondAttribute="leading" constant="22" id="I2x-hi-Me6"/>
-                                    <constraint firstItem="wWS-AB-ceO" firstAttribute="centerX" secondItem="Bxk-GU-PDH" secondAttribute="centerX" constant="6" id="IDe-P8-Vvx"/>
-                                    <constraint firstItem="5iv-KO-1wh" firstAttribute="leading" secondItem="bc6-Ng-HFk" secondAttribute="trailing" constant="3" id="K4x-hy-aGc"/>
-                                    <constraint firstItem="5iv-KO-1wh" firstAttribute="leading" secondItem="bc6-Ng-HFk" secondAttribute="trailing" constant="3" id="KtL-ha-kNr"/>
-                                    <constraint firstItem="dIc-c7-p5M" firstAttribute="leading" secondItem="BEG-CQ-ct9" secondAttribute="trailing" constant="8" id="MMd-9S-aWd"/>
-                                    <constraint firstItem="bc6-Ng-HFk" firstAttribute="top" secondItem="Bg7-eU-tft" secondAttribute="bottom" constant="8" id="MjR-tu-IgB"/>
-                                    <constraint firstAttribute="width" constant="255" id="Xh2-3a-jJB"/>
-                                    <constraint firstItem="Bg7-eU-tft" firstAttribute="top" secondItem="wWS-AB-ceO" secondAttribute="bottom" constant="8" symbolic="YES" id="coW-tL-cbv"/>
-                                    <constraint firstItem="icr-ic-Fxk" firstAttribute="leading" secondItem="ytQ-pf-Pky" secondAttribute="leading" constant="20" id="hfN-TW-5HM"/>
-                                    <constraint firstItem="wWS-AB-ceO" firstAttribute="leading" secondItem="bc6-Ng-HFk" secondAttribute="leading" id="isy-yd-Oix"/>
-                                    <constraint firstItem="wWS-AB-ceO" firstAttribute="top" secondItem="Bxk-GU-PDH" secondAttribute="bottom" constant="12" id="nLO-yj-dku"/>
-                                    <constraint firstItem="bc6-Ng-HFk" firstAttribute="leading" secondItem="ytQ-pf-Pky" secondAttribute="leading" constant="20" id="oHL-t0-JIi"/>
-                                    <constraint firstItem="Bxk-GU-PDH" firstAttribute="leading" secondItem="ytQ-pf-Pky" secondAttribute="leading" constant="31" id="qvg-Xq-JG5"/>
-                                    <constraint firstItem="Bxk-GU-PDH" firstAttribute="top" secondItem="ytQ-pf-Pky" secondAttribute="top" constant="20" id="tM8-B8-0RM"/>
-                                    <constraint firstAttribute="trailing" secondItem="5iv-KO-1wh" secondAttribute="trailing" constant="32" id="vIZ-HW-Okm"/>
-                                    <constraint firstAttribute="bottom" secondItem="icr-ic-Fxk" secondAttribute="bottom" constant="7" id="vul-bl-lqm"/>
-                                </constraints>
-                            </visualEffectView>
-                            <scrollView horizontalLineScroll="115" horizontalPageScroll="10" verticalLineScroll="115" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="38B-Se-0Vs">
-                                <rect key="frame" x="-1" y="-1" width="496" height="272"/>
-                                <clipView key="contentView" copiesOnScroll="NO" id="8eW-I2-VOc">
+                            <scrollView horizontalLineScroll="115" horizontalPageScroll="10" verticalLineScroll="115" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tc-dB-Fce">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <clipView key="contentView" copiesOnScroll="NO" id="3Yd-G3-cox">
                                     <rect key="frame" x="1" y="1" width="166" height="79"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <ikImageBrowserView autoresizesSubviews="NO" misplaced="YES" zoomValue="0.49756687879562378" animates="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YiZ-05-4cJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="495" height="270"/>
+                                        <ikImageBrowserView autoresizesSubviews="NO" fixedFrame="YES" zoomValue="0.49999988079071045" animates="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Spv-rK-r2b">
+                                            <rect key="frame" x="0.0" y="0.0" width="495" height="299"/>
                                             <autoresizingMask key="contentResizingMask" heightSizable="YES"/>
-                                            <size key="cellSize" width="95" height="95"/>
+                                            <size key="cellSize" width="102" height="102"/>
                                             <connections>
-                                                <outlet property="_dataSource" destination="D73-0g-bv4" id="fsv-Wt-A4G"/>
+                                                <outlet property="_dataSource" destination="pag-46-Lxj" id="wh5-XI-1Za"/>
+                                                <outlet property="_delegate" destination="pag-46-Lxj" id="njf-Aa-osb"/>
                                             </connections>
                                         </ikImageBrowserView>
                                     </subviews>
-                                    <constraints>
-                                        <constraint firstAttribute="bottom" secondItem="YiZ-05-4cJ" secondAttribute="bottom" id="5gJ-2u-Fe2"/>
-                                        <constraint firstItem="YiZ-05-4cJ" firstAttribute="top" secondItem="8eW-I2-VOc" secondAttribute="top" id="JLd-ux-zVq"/>
-                                        <constraint firstItem="YiZ-05-4cJ" firstAttribute="top" secondItem="8eW-I2-VOc" secondAttribute="top" id="NpQ-ZB-0sJ"/>
-                                        <constraint firstAttribute="trailing" secondItem="YiZ-05-4cJ" secondAttribute="trailing" constant="-1" id="eNt-nB-TAi"/>
-                                        <constraint firstAttribute="trailing" secondItem="YiZ-05-4cJ" secondAttribute="trailing" constant="-1" id="n8b-2j-gsZ"/>
-                                        <constraint firstItem="YiZ-05-4cJ" firstAttribute="leading" secondItem="8eW-I2-VOc" secondAttribute="leading" id="qhn-JR-fzR"/>
-                                    </constraints>
                                 </clipView>
-                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="PLF-wN-cfh">
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" horizontal="YES" id="jks-c3-x4m">
                                     <rect key="frame" x="1" y="80" width="166" height="15"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
-                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="1bj-pu-bwS">
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="Soi-MS-4U7">
                                     <rect key="frame" x="167" y="1" width="15" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
                             </scrollView>
                         </subviews>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="ytQ-pf-Pky" secondAttribute="bottom" id="EkZ-MU-VtY"/>
-                            <constraint firstItem="ytQ-pf-Pky" firstAttribute="leading" secondItem="38B-Se-0Vs" secondAttribute="trailing" constant="1" id="G0r-Zm-hcb"/>
-                            <constraint firstAttribute="trailing" secondItem="ytQ-pf-Pky" secondAttribute="trailing" id="HGZ-Ey-UrP"/>
-                            <constraint firstAttribute="bottom" secondItem="38B-Se-0Vs" secondAttribute="bottom" constant="-1" id="HVA-ge-AdZ"/>
-                            <constraint firstItem="ytQ-pf-Pky" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="cAe-I1-eXq"/>
-                            <constraint firstItem="38B-Se-0Vs" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="-1" id="guO-UO-926"/>
-                            <constraint firstItem="38B-Se-0Vs" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="-1" id="z8g-lA-NnV"/>
+                            <constraint firstItem="7tc-dB-Fce" firstAttribute="top" secondItem="kVQ-eh-BzC" secondAttribute="top" id="M8c-37-Jp0"/>
+                            <constraint firstItem="7tc-dB-Fce" firstAttribute="leading" secondItem="kVQ-eh-BzC" secondAttribute="leading" id="SYR-Zh-LIQ"/>
+                            <constraint firstAttribute="trailing" secondItem="7tc-dB-Fce" secondAttribute="trailing" id="dlb-iq-Xau"/>
+                            <constraint firstAttribute="bottom" secondItem="7tc-dB-Fce" secondAttribute="bottom" id="yLO-ep-Ijm"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="camName" destination="icr-ic-Fxk" id="wcu-2f-hSf"/>
-                        <outlet property="destinationPathControl" destination="bc6-Ng-HFk" id="Ugv-mA-fWH"/>
-                        <outlet property="imgListController" destination="D73-0g-bv4" id="feo-q0-Rrd"/>
-                        <outlet property="importTitleLabel" destination="Bxk-GU-PDH" id="eE4-O8-a17"/>
-                        <outlet property="progessBar" destination="BEG-CQ-ct9" id="puy-Ar-FMN"/>
-                    </connections>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
-                <arrayController objectClassName="FileData" automaticallyRearrangesObjects="YES" id="CqB-tc-6Xi">
-                    <declaredKeys>
-                        <string>filename</string>
-                        <string>filesize</string>
-                    </declaredKeys>
+                <customObject id="lfA-MQ-MEy" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="pag-46-Lxj" customClass="ImageListController" customModule="LympiControl" customModuleProvider="target">
                     <connections>
-                        <binding destination="D73-0g-bv4" name="contentArray" keyPath="images" id="CSE-gI-opv"/>
-                    </connections>
-                </arrayController>
-                <userDefaultsController representsSharedInstance="YES" id="6Yg-WF-ebQ"/>
-                <customObject id="D73-0g-bv4" customClass="ImageListController" customModule="LympiControl" customModuleProvider="target">
-                    <connections>
-                        <outlet property="arrayController" destination="CqB-tc-6Xi" id="8Pk-Iy-9H3"/>
-                        <outlet property="imgBrowser" destination="YiZ-05-4cJ" id="Pae-lx-kGb"/>
+                        <outlet property="imgBrowser" destination="Spv-rK-r2b" id="YBT-hX-b5v"/>
                     </connections>
                 </customObject>
             </objects>
-            <point key="canvasLocation" x="302.5" y="984"/>
+            <point key="canvasLocation" x="253" y="1914"/>
         </scene>
-        <!--Tab View Controller-->
+        <!--Import Panel View Controller-->
+        <scene sceneID="Wvt-BT-3HS">
+            <objects>
+                <viewController id="uWY-pl-Mfc" customClass="LCImportPanelViewController" customModule="LympiControl" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="ciE-gv-lBU">
+                        <rect key="frame" x="0.0" y="0.0" width="261" height="314"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <visualEffectView misplaced="YES" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="avZ-bQ-HAT">
+                                <rect key="frame" x="0.0" y="0.0" width="261" height="314"/>
+                                <subviews>
+                                    <box verticalHuggingPriority="750" misplaced="YES" title="Box" boxType="separator" titlePosition="noTitle" translatesAutoresizingMaskIntoConstraints="NO" id="Dsl-kg-5US">
+                                        <rect key="frame" x="20" y="228" width="221" height="5"/>
+                                        <color key="borderColor" white="0.0" alpha="0.41999999999999998" colorSpace="calibratedWhite"/>
+                                        <color key="fillColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <font key="titleFont" metaFont="system"/>
+                                    </box>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2ih-0m-CBk">
+                                        <rect key="frame" x="38" y="239" width="185" height="24"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Import von 0 Dateien" id="86a-ZL-dJ2">
+                                            <font key="font" size="20" name="HelveticaNeue-Light"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <pathControl verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" allowsExpansionToolTips="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VJR-tQ-DQf">
+                                        <rect key="frame" x="20" y="165" width="221" height="22"/>
+                                        <pathCell key="cell" selectable="YES" alignment="left" id="LQ0-el-pqb">
+                                            <font key="font" metaFont="system"/>
+                                            <url key="url" string="file://localhost/Applications/"/>
+                                            <color key="backgroundColor" red="0.8980392157" green="0.92549019610000005" blue="0.97254901959999995" alpha="0.0" colorSpace="deviceRGB"/>
+                                        </pathCell>
+                                    </pathControl>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="IpF-JT-DxN">
+                                        <rect key="frame" x="18" y="195" width="47" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Zielort:" id="Dxe-iN-r8w">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                    <button verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Nw-Q0-nHt">
+                                        <rect key="frame" x="65" y="186" width="44" height="32"/>
+                                        <buttonCell key="cell" type="push" title="..." bezelStyle="rounded" alignment="center" borderStyle="border" inset="2" id="Tqk-Mn-OyD">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="pushSelectFolder:" target="uWY-pl-Mfc" id="NDW-yk-2Id"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VzE-6s-aUx">
+                                        <rect key="frame" x="180" y="46" width="67" height="32"/>
+                                        <buttonCell key="cell" type="push" title="Los!" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K30-5z-4zB">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="pushStartImport:" target="uWY-pl-Mfc" id="jC6-Rq-7Mn"/>
+                                        </connections>
+                                    </button>
+                                    <progressIndicator misplaced="YES" maxValue="100" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="w5r-4x-KfL">
+                                        <rect key="frame" x="20" y="53" width="158" height="20"/>
+                                    </progressIndicator>
+                                    <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Z8v-L6-wWD">
+                                        <rect key="frame" x="18" y="20" width="38" height="17"/>
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Label" id="D3d-Ax-df3">
+                                            <font key="font" metaFont="system"/>
+                                            <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                                        </textFieldCell>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Dsl-kg-5US" secondAttribute="trailing" constant="20" id="6g8-I9-6R7"/>
+                                    <constraint firstAttribute="centerX" secondItem="2ih-0m-CBk" secondAttribute="centerX" id="Ds7-KR-W9W"/>
+                                    <constraint firstItem="Z8v-L6-wWD" firstAttribute="leading" secondItem="avZ-bQ-HAT" secondAttribute="leading" constant="20" id="HgB-SR-fbN"/>
+                                    <constraint firstItem="Dsl-kg-5US" firstAttribute="leading" secondItem="avZ-bQ-HAT" secondAttribute="leading" constant="20" id="MNj-0Z-wdF"/>
+                                    <constraint firstItem="VJR-tQ-DQf" firstAttribute="leading" secondItem="avZ-bQ-HAT" secondAttribute="leading" constant="20" id="ZAf-d3-XVe"/>
+                                    <constraint firstItem="2ih-0m-CBk" firstAttribute="top" secondItem="avZ-bQ-HAT" secondAttribute="top" constant="51" id="avy-xn-5f2"/>
+                                    <constraint firstItem="Dsl-kg-5US" firstAttribute="top" secondItem="2ih-0m-CBk" secondAttribute="bottom" constant="8" id="b0R-h7-RPM"/>
+                                    <constraint firstItem="VzE-6s-aUx" firstAttribute="leading" secondItem="w5r-4x-KfL" secondAttribute="trailing" constant="8" id="bH0-g1-S1J"/>
+                                    <constraint firstAttribute="bottom" secondItem="VzE-6s-aUx" secondAttribute="bottom" constant="53" id="cnu-jY-Cf6"/>
+                                    <constraint firstAttribute="trailing" secondItem="VJR-tQ-DQf" secondAttribute="trailing" constant="20" id="kBe-y2-A2X"/>
+                                    <constraint firstItem="IpF-JT-DxN" firstAttribute="top" secondItem="Dsl-kg-5US" secondAttribute="bottom" constant="18" id="rxE-0d-8EP"/>
+                                    <constraint firstItem="VJR-tQ-DQf" firstAttribute="top" secondItem="6Nw-Q0-nHt" secondAttribute="bottom" constant="6" id="s33-fA-4DG"/>
+                                    <constraint firstItem="IpF-JT-DxN" firstAttribute="leading" secondItem="avZ-bQ-HAT" secondAttribute="leading" constant="20" id="sWJ-up-Y97"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z8v-L6-wWD" secondAttribute="bottom" constant="20" id="v6Y-ja-F0B"/>
+                                    <constraint firstItem="w5r-4x-KfL" firstAttribute="leading" secondItem="avZ-bQ-HAT" secondAttribute="leading" constant="20" id="xYo-aT-0Nd"/>
+                                    <constraint firstItem="Z8v-L6-wWD" firstAttribute="top" secondItem="w5r-4x-KfL" secondAttribute="bottom" constant="17" id="y6W-4C-kuh"/>
+                                    <constraint firstAttribute="trailing" secondItem="VzE-6s-aUx" secondAttribute="trailing" constant="20" id="zAE-tY-TEw"/>
+                                    <constraint firstItem="VzE-6s-aUx" firstAttribute="leading" secondItem="w5r-4x-KfL" secondAttribute="trailing" constant="8" id="zMW-Ax-x7w"/>
+                                </constraints>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="avZ-bQ-HAT" firstAttribute="top" secondItem="ciE-gv-lBU" secondAttribute="top" id="Eqx-4j-5lF"/>
+                            <constraint firstItem="avZ-bQ-HAT" firstAttribute="leading" secondItem="ciE-gv-lBU" secondAttribute="leading" id="KNe-KZ-jOX"/>
+                            <constraint firstAttribute="bottom" secondItem="avZ-bQ-HAT" secondAttribute="bottom" id="bac-GQ-nQU"/>
+                            <constraint firstAttribute="trailing" secondItem="avZ-bQ-HAT" secondAttribute="trailing" id="jFU-NY-Dh4"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="camName" destination="Z8v-L6-wWD" id="ddz-O8-Fba"/>
+                        <outlet property="destinationPathControl" destination="VJR-tQ-DQf" id="d1A-9o-56M"/>
+                        <outlet property="importTitleLabel" destination="2ih-0m-CBk" id="1GX-8e-1k8"/>
+                        <outlet property="progessBar" destination="w5r-4x-KfL" id="EUQ-ln-fhV"/>
+                    </connections>
+                </viewController>
+                <customObject id="drU-Ml-ilU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="750.5" y="1365"/>
+        </scene>
+        <!--Application Tabs-->
         <scene sceneID="ebF-lK-ozG">
             <objects>
-                <tabViewController selectedTabViewItemIndex="0" id="IpR-ck-wkY" sceneMemberID="viewController">
+                <tabViewController title="Application Tabs" selectedTabViewItemIndex="0" tabStyle="toolbar" id="IpR-ck-wkY" sceneMemberID="viewController">
                     <tabViewItems>
-                        <tabViewItem label="Import" id="3eC-fB-W0g"/>
-                        <tabViewItem label="Liveview" identifier="" id="aB9-7B-B1g"/>
+                        <tabViewItem label="Import" image="NSIconViewTemplate" id="K1K-Zd-6lv"/>
+                        <tabViewItem label="Liveview" image="NSSlideshowTemplate" id="dw5-Lb-r2p"/>
                     </tabViewItems>
-                    <viewControllerTransitionOptions key="transitionOptions" crossfade="YES" slideLeft="YES" allowUserInteraction="YES"/>
                     <tabView key="tabView" type="noTabsNoBorder" id="rVS-ZL-PEv">
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -858,13 +868,13 @@
                         <tabViewItems/>
                     </tabView>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="tabItems" id="P0B-7o-pbm"/>
-                        <segue destination="PzF-bg-gbg" kind="relationship" relationship="tabItems" id="RX7-ZM-fxi"/>
+                        <segue destination="zOS-2F-TiK" kind="relationship" relationship="tabItems" id="gt8-Yb-P2c"/>
+                        <segue destination="PzF-bg-gbg" kind="relationship" relationship="tabItems" id="3CK-b5-9aS"/>
                     </connections>
                 </tabViewController>
                 <customObject id="uyv-pc-D8E" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1085" y="550"/>
+            <point key="canvasLocation" x="253" y="764"/>
         </scene>
         <!--Liveview-->
         <scene sceneID="KOw-NP-KGV">
@@ -874,18 +884,29 @@
                         <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O2d-Be-hAH">
-                                <rect key="frame" x="65" y="48" width="320" height="240"/>
+                            <visualEffectView appearanceType="vibrantDark" blendingMode="behindWindow" material="appearanceBased" state="followsWindowActiveState" translatesAutoresizingMaskIntoConstraints="NO" id="fZv-fk-1mj">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                                <subviews>
+                                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="O2d-Be-hAH">
+                                        <rect key="frame" x="65" y="30" width="320" height="240"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="320" id="XXY-Uu-dQn"/>
+                                            <constraint firstAttribute="height" constant="240" id="nmW-bT-ARO"/>
+                                        </constraints>
+                                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="VpY-sG-8xu"/>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="XXY-Uu-dQn"/>
-                                    <constraint firstAttribute="height" constant="240" id="nmW-bT-ARO"/>
+                                    <constraint firstAttribute="bottom" secondItem="O2d-Be-hAH" secondAttribute="bottom" constant="30" id="MxS-rU-uZQ"/>
+                                    <constraint firstItem="O2d-Be-hAH" firstAttribute="leading" secondItem="fZv-fk-1mj" secondAttribute="leading" constant="65" id="x30-M7-FFv"/>
                                 </constraints>
-                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="VpY-sG-8xu"/>
-                            </imageView>
+                            </visualEffectView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="O2d-Be-hAH" firstAttribute="leading" secondItem="Jk4-QJ-e8o" secondAttribute="leading" constant="65" id="3RH-lP-BJV"/>
-                            <constraint firstAttribute="bottom" secondItem="O2d-Be-hAH" secondAttribute="bottom" constant="48" id="BvH-Wc-utu"/>
+                            <constraint firstItem="fZv-fk-1mj" firstAttribute="top" secondItem="Jk4-QJ-e8o" secondAttribute="top" id="Eqc-7T-t4H"/>
+                            <constraint firstAttribute="trailing" secondItem="fZv-fk-1mj" secondAttribute="trailing" id="WIs-fe-zSG"/>
+                            <constraint firstItem="fZv-fk-1mj" firstAttribute="leading" secondItem="Jk4-QJ-e8o" secondAttribute="leading" id="kdo-5A-Uu7"/>
+                            <constraint firstAttribute="bottom" secondItem="fZv-fk-1mj" secondAttribute="bottom" id="wcI-ax-9dH"/>
                         </constraints>
                     </view>
                     <connections>
@@ -894,7 +915,11 @@
                 </viewController>
                 <customObject id="EcP-Io-QiP" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1615" y="764"/>
+            <point key="canvasLocation" x="941" y="764"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSIconViewTemplate" width="10" height="10"/>
+        <image name="NSSlideshowTemplate" width="17" height="14"/>
+    </resources>
 </document>
